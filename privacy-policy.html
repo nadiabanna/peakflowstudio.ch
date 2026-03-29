@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Peak + Flow Studio · Zürich</title>
+  <meta name="description" content="Privacy Policy for Peak + Flow Studio, boutique fitness and wellness in Zürich.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────── */
+    :root {
+      --ink:      #0D0C0B;
+      --ink-2:    #171614;
+      --cream:    #F5F0E8;
+      --cream-2:  #EDE7DC;
+      --cream-3:  #E2D9CC;
+      --gold:     #C9AA6F;
+      --stone:    #6A6560;
+      --muted:    #484440;
+      --border:   rgba(106,101,96,0.25);
+    }
+
+    /* ─── RESET ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--gold); color: var(--ink); }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── GRAIN OVERLAY ──────────────────────────────── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      opacity: 0.4;
+    }
+
+    /* ─── NAV ────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.75rem 3.5rem;
+      background: rgba(13, 12, 11, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cream);
+      transition: opacity 0.3s;
+    }
+    .nav-brand:hover { opacity: 0.65; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cream-2);
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width 0.35s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ─── PAGE ───────────────────────────────────────── */
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 10rem 2rem 8rem;
+    }
+
+    .page-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .page-date {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 4rem;
+    }
+
+    .divider {
+      width: 3rem;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 4rem;
+    }
+
+    /* ─── CONTENT ────────────────────────────────────── */
+    .policy-section { margin-bottom: 3.5rem; }
+
+    .policy-section h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-section p {
+      font-size: 1.05rem;
+      color: var(--cream-2);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul {
+      list-style: none;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .policy-section ul li {
+      font-size: 1.05rem;
+      color: var(--cream-2);
+      line-height: 1.85;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .policy-section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .policy-section a {
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201,170,111,0.3);
+      transition: border-color 0.3s;
+    }
+
+    .policy-section a:hover { border-color: var(--gold); }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      padding: 5rem 3.5rem 3rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .footer-brand-mark {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--stone);
+      line-height: 1.7;
+    }
+
+    .footer-col-hed {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 300;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.75rem;
+    }
+
+    .sitemap { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+
+    .sitemap a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.42);
+      transition: color 0.3s;
+    }
+
+    .sitemap a:hover { color: var(--gold); }
+
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-copy,
+    .footer-locs {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.55);
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 680px) {
+      #nav { padding: 1.4rem 1.5rem; }
+      .nav-links { display: none; }
+      .page-wrap { padding: 8rem 1.5rem 6rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-bar { flex-direction: column; gap: 0.75rem; text-align: center; }
+      footer { padding: 4rem 1.5rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─────────── NAV ─────────── -->
+<nav id="nav">
+  <a class="nav-brand" href="index.html">Peak + Flow Studio</a>
+  <ul class="nav-links">
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#story">Story</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ─────────── CONTENT ─────────── -->
+<main>
+  <div class="page-wrap">
+
+    <p class="page-eyebrow">Legal</p>
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="page-date">Last updated: March 2026</p>
+    <div class="divider"></div>
+
+    <div class="policy-section">
+      <h2>Controller</h2>
+      <p>The party responsible for data processing on this website is:</p>
+      <p>
+        Nadia Banna<br>
+        Gemeinschaftspraxis, Wiesenstrasse 11<br>
+        8008 Zürich, Switzerland<br>
+        Phone: <a href="tel:+41794385987">+41 79 438 59 87</a>
+      </p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Data We Collect</h2>
+      <p>We collect personal data only when you actively provide it to us — for example, when you submit the contact form on this website. This may include:</p>
+      <ul>
+        <li>Your name and email address</li>
+        <li>Your message and selected service</li>
+      </ul>
+      <p>We do not collect any data automatically through analytics tools or tracking scripts.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Contact Form — Formspree</h2>
+      <p>Our contact form is processed by <a href="https://formspree.io" target="_blank" rel="noopener">Formspree, Inc.</a> When you submit the form, your data (name, email address, and message) is transmitted to and stored on Formspree's servers in order to deliver your message to us.</p>
+      <p>Formspree acts as a data processor on our behalf. Your data is used solely to respond to your enquiry and is not shared with third parties beyond what is necessary for delivery. For details, please refer to <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree's Privacy Policy</a>.</p>
+      <p>The legal basis for this processing is our legitimate interest in responding to enquiries (Art. 6(1)(f) GDPR / Swiss DSG).</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Google Fonts</h2>
+      <p>This website uses Google Fonts, a service provided by Google LLC, to display custom typefaces. When you visit the site, your browser loads font files directly from Google's servers. This causes your IP address to be transmitted to Google.</p>
+      <p>We use Google Fonts to ensure a consistent and high-quality visual experience. The legal basis is our legitimate interest in presenting the website correctly (Art. 6(1)(f) GDPR / Swiss DSG).</p>
+      <p>For more information, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Data Retention</h2>
+      <p>We retain your personal data only as long as necessary to fulfil the purpose for which it was collected, or as required by applicable law. Contact form submissions are kept for a maximum of twelve months unless an ongoing business relationship necessitates a longer retention period.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Your Rights</h2>
+      <p>Under applicable law (GDPR and the Swiss Federal Act on Data Protection), you have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Request correction of inaccurate data</li>
+        <li>Request deletion of your data</li>
+        <li>Request restriction of processing</li>
+        <li>Data portability where technically feasible</li>
+        <li>Withdraw consent at any time, where processing is based on consent</li>
+        <li>Lodge a complaint with the competent supervisory authority</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us by phone at <a href="tel:+41794385987">+41 79 438 59 87</a>.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Security</h2>
+      <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, or misuse. All data transmitted via the contact form is encrypted in transit using HTTPS.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or in applicable law. The date at the top of this page indicates when the policy was last revised. We encourage you to review this page periodically.</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- ─────────── FOOTER ─────────── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand-mark">Peak + Flow Studio</p>
+      <p class="footer-tagline">Boutique fitness and wellness in the heart of Zürich. Where peak performance meets deep restoration.</p>
+    </div>
+    <div>
+      <p class="footer-col-hed">Sitemap</p>
+      <ul class="sitemap">
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#story">Story</a></li>
+        <li><a href="index.html#approach">Approach</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <p class="footer-copy">&copy; <span id="year"></span> Peak + Flow Studio. All rights reserved.</p>
+    <p class="footer-locs">Seefeld &middot; Zürich, Switzerland</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
