@@ -175,6 +175,66 @@
     .nav-links a:hover { color: var(--gold); }
     .nav-links a:hover::after { width: 100%; }
 
+    /* ─── HAMBURGER ──────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 2rem;
+      height: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1100;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: var(--cream);
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* ─── MOBILE MENU ────────────────────────────── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(13,12,11,0.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu a {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 8vw, 3rem);
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+
+    .mobile-menu a:hover { color: var(--gold); }
+
     /* ─── HERO ───────────────────────────────────────── */
     #hero {
       position: relative;
@@ -1131,6 +1191,8 @@
 
     @media (max-width: 680px) {
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu { display: flex; }
       .split { grid-template-columns: 1fr; height: auto; }
       .split-panel { min-height: 55vmax; }
       .goals-grid { grid-template-columns: 1fr; }
@@ -1153,7 +1215,17 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="#gallery">Gallery</a>
+  <a href="#story">Story</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</div>
 
 <!-- ─────────── HERO ─────────── -->
 <section id="hero">
@@ -1525,6 +1597,22 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ── Mobile menu ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  function toggleMenu(open) {
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+    mobileMenu.classList.toggle('open', open);
+    mobileMenu.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', () => toggleMenu(!hamburger.classList.contains('open')));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
 
   /* ── Nav scroll state ── */
   const nav = document.getElementById('nav');
