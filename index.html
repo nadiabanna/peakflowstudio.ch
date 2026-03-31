@@ -7,7 +7,7 @@
   <meta name="description" content="Peak + Flow Studio offers boutique fitness and wellness sessions in Zürich — running analysis, meditation, vagal toning, and more. 45 min · 175 CHF.">
   <!-- ─── SEO ─── -->
   <meta name="theme-color" content="#0D0C0B">
-  <link rel="preload" href="images/mountain.jpg" as="image">
+  <link rel="preload" href="images/mountain.webp" as="image" type="image/webp">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://www.peakflowstudio.ch">
   <meta name="robots" content="index, follow">
@@ -250,7 +250,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('images/mountain.jpg');
+      background-image: url('images/mountain.webp');
       background-size: cover;
       background-position: center 45%;
       animation: bgBreath 22s ease-in-out infinite alternate;
@@ -1352,7 +1352,10 @@
   <div class="wrap">
     <div class="story-grid">
       <div class="story-img-wrap r">
-        <img class="story-img" src="images/yoga.jpg" alt="Wellness session at Peak + Flow Studio, Zürich" loading="lazy" width="2048" height="1366">
+        <picture>
+          <source srcset="images/yoga.webp" type="image/webp">
+          <img class="story-img" src="images/yoga.jpg" alt="Wellness session at Peak + Flow Studio, Zürich" loading="lazy" width="2048" height="1366">
+        </picture>
         <div class="story-img-frame"></div>
       </div>
       <div class="story-content">
@@ -1387,19 +1390,34 @@
   </div>
   <div class="gallery-mosaic">
     <div class="gal-item r">
-      <img src="images/runner.jpg" alt="Running Analysis" loading="lazy" width="1366" height="2048">
+      <picture>
+        <source srcset="images/runner.webp" type="image/webp">
+        <img src="images/runner.jpg" alt="Running Analysis" loading="lazy" width="1366" height="2048">
+      </picture>
     </div>
     <div class="gal-item r r-d1">
-      <img src="images/incense.jpg" alt="Meditation" loading="lazy" width="2048" height="1366">
+      <picture>
+        <source srcset="images/incense.webp" type="image/webp">
+        <img src="images/incense.jpg" alt="Meditation" loading="lazy" width="2048" height="1366">
+      </picture>
     </div>
     <div class="gal-item r r-d2">
-      <img src="images/feet-jump.jpg" alt="Peak Fitness" loading="lazy" width="1366" height="2048">
+      <picture>
+        <source srcset="images/feet-jump.webp" type="image/webp">
+        <img src="images/feet-jump.jpg" alt="Peak Fitness" loading="lazy" width="1366" height="2048">
+      </picture>
     </div>
     <div class="gal-item r r-d1">
-      <img src="images/feet-close.jpg" alt="Movement" loading="lazy" width="1366" height="2048">
+      <picture>
+        <source srcset="images/feet-close.webp" type="image/webp">
+        <img src="images/feet-close.jpg" alt="Movement" loading="lazy" width="1366" height="2048">
+      </picture>
     </div>
     <div class="gal-item r r-d2">
-      <img src="images/mountain.jpg" alt="Athletic Performance" loading="lazy" width="2048" height="1280">
+      <picture>
+        <source srcset="images/mountain.webp" type="image/webp">
+        <img src="images/mountain.jpg" alt="Athletic Performance" loading="lazy" width="2048" height="1280">
+      </picture>
     </div>
   </div>
 </section>
